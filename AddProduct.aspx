@@ -188,17 +188,10 @@
                 <div class="table table-responsive">
                     <asp:GridView ID="GridView1" runat="server" CssClass="table" AutoGenerateColumns="false">
                     <Columns>  
-                        <asp:BoundField DataField="PID" HeaderText="S.No." />  
-                        <asp:BoundField DataField="PName" HeaderText="PName" />  
-                        <asp:BoundField DataField="PPrice" HeaderText="Price" />  
-                        <asp:BoundField DataField="PSelPrice" HeaderText="SellPrice" />  
-                        <asp:BoundField DataField="Brand" HeaderText="Brand" />  
-                        <asp:BoundField DataField="CatName" HeaderText="Category" />  
-                        <asp:BoundField DataField="SubCatName" HeaderText="SubCategory" />
-
-                        <asp:BoundField DataField="gender" HeaderText="gender" />  
-                        <asp:BoundField DataField="SizeName" HeaderText="SizeName" />  
-                        <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
+                        <asp:BoundField DataField="pid" HeaderText="SubCategory" />
+                        <asp:BoundField DataField="pname" HeaderText="gender" />  
+                        <asp:BoundField DataField="pprice" HeaderText="SizeName" />  
+                        <asp:BoundField DataField="PSelPrice" HeaderText="Quantity" />
                         
                         <asp:TemplateField HeaderText="Photo">  
                     <ItemTemplate>  
