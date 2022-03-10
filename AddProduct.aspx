@@ -202,14 +202,14 @@
                 <div class="table table-responsive">
                     <asp:GridView ID="GridView1" OnRowDeleting="RowDeleting" runat="server" CssClass="table" AutoGenerateColumns="false">
                     <Columns>  
-                        <asp:BoundField DataField="pid" HeaderText="SubCategory" />
-                        <asp:BoundField DataField="pname" HeaderText="gender" />  
-                        <asp:BoundField DataField="pprice" HeaderText="SizeName" />  
-                        <asp:BoundField DataField="PSelPrice" HeaderText="Quantity" />
+                        <asp:BoundField DataField="pid" HeaderText="ProductId" />
+                        <asp:BoundField DataField="pname" HeaderText="Product Name" />  
+                        <asp:BoundField DataField="pprice" HeaderText="Purchase Price" />  
+                        <asp:BoundField DataField="PSelPrice" HeaderText="Sell Price" />
                         
                         <asp:TemplateField HeaderText="Photo">  
                     <ItemTemplate>  
-                        <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/> 
+                        <!-- <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/>  -->
                     </ItemTemplate>  
                 </asp:TemplateField> 
 
