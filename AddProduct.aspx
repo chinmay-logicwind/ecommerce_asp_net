@@ -209,7 +209,6 @@
                         
                         <asp:TemplateField HeaderText="Photo">  
                     <ItemTemplate>  
-                        <!-- <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/>  -->
                     </ItemTemplate>  
                 </asp:TemplateField> 
 
