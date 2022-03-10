@@ -358,6 +358,11 @@ protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
     ViewState["dt"] = dt;
     BindGrid();
 }
+protected void BindGrid()
+{
+    GridView1.DataSource = ViewState["dt"] as DataTable;
+    GridView1.DataBind();
+}
     private void BindGridview1()
     {
         SqlConnection con = new SqlConnection(CS);
