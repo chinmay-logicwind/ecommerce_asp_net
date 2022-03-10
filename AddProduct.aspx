@@ -214,12 +214,12 @@
       
       </div>
       <div class="panel-footer">
-        <div class ="form-group">
+        <!-- <div class ="form-group">
             <asp:Label ID="Label13Del" runat="server" CssClass ="col-md-2 control-label" Text="ProductId"></asp:Label>
                 <asp:TextBox ID="ProductId" CssClass ="form-control" runat="server"></asp:TextBox>
                 <asp:Button ID="btnDel" CssClass ="btn btn-success " runat="server" Text="Delete Product" OnClick="deleteProduct"  />
 
-        </div>
+        </div> -->
 
       </div>
     </div>
