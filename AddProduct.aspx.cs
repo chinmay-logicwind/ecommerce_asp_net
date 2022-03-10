@@ -350,7 +350,7 @@ protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         }
     }
 }
-protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
+protected void RowDeleting(object sender, GridViewDeleteEventArgs e)
 {
     int index = Convert.ToInt32(e.RowIndex);
     DataTable dt = ViewState["dt"] as DataTable;

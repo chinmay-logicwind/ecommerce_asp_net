@@ -200,7 +200,7 @@
                 </asp:TemplateField> 
 
                         <asp:CommandField ShowEditButton="true" />  
-                        <asp:CommandField ShowDeleteButton="true" />
+                        <asp:CommandField OnRowDeleting="RowDeleting" ShowDeleteButton="true" />
                         
                          </Columns> 
                     </asp:GridView>
