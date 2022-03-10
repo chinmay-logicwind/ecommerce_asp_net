@@ -195,12 +195,12 @@
                         
                         <asp:TemplateField HeaderText="Photo">  
                     <ItemTemplate>  
-                        <%-- <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/> --%>
+                        <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/> 
                     </ItemTemplate>  
                 </asp:TemplateField> 
 
-                       <%-- <asp:CommandField ShowEditButton="true" />  
-                        <asp:CommandField ShowDeleteButton="true" />--%>
+                        <asp:CommandField ShowEditButton="true" />  
+                        <asp:CommandField ShowDeleteButton="true" />
                         
                          </Columns> 
                     </asp:GridView>
