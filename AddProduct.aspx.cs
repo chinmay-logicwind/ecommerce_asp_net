@@ -108,6 +108,14 @@ public partial class AddProduct : System.Web.UI.Page
                     cmd3.ExecuteNonQuery();
         }
     }
+    
+private void MsgBox(string sMessage)    
+    {    
+        string msg = "<script language=\"javascript\">";    
+        msg += "alert('" + sMessage + "');";    
+        msg += "</script>";    
+        Response.Write(msg);    
+    }
     protected void btnAdd_Click(object sender, EventArgs e)
     {   
         int flag=0;
