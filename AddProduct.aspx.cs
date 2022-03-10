@@ -109,7 +109,19 @@ public partial class AddProduct : System.Web.UI.Page
         }
     }
     protected void btnAdd_Click(object sender, EventArgs e)
-    {
+    {   
+        int flag=0;
+        for(int i=0; i<cblSize .Items .Count;i++)
+            {
+                if(cblSize .Items [i].Selected ==true )
+                {
+                    flag=1;
+                }
+            }
+            if(flag==0){
+                MsgBox("Please select a valid Size!");
+                return;
+            }
         using (SqlConnection con = new SqlConnection(CS))
         {
             SqlCommand cmd = new SqlCommand("sp_InsertProduct", con);
