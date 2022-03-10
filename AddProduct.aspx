@@ -206,12 +206,6 @@
                         <asp:BoundField DataField="pname" HeaderText="Product Name" />  
                         <asp:BoundField DataField="pprice" HeaderText="Purchase Price" />  
                         <asp:BoundField DataField="PSelPrice" HeaderText="Sell Price" />
-                        
-                        <asp:TemplateField HeaderText="Photo">  
-                    <ItemTemplate>  
-                    </ItemTemplate>  
-                </asp:TemplateField> 
-
                         <asp:CommandField ShowEditButton="true" />  
                         <asp:CommandField ShowDeleteButton="true" />
                         
