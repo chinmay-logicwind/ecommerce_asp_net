@@ -336,14 +336,36 @@ public partial class AddProduct : System.Web.UI.Page
             ddlGender.Enabled = false ;
         }
     }
-
+protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
+{
+    if (e.Row.RowType == DataControlRowType.DataRow)
+    {
+        string item = e.Row.Cells[0].Text;
+        foreach (Button button in e.Row.Cells[2].Controls.OfType<Button>())
+        {
+            if (button.CommandName == "Delete")
+            {
+                button.Attributes["onclick"] = "if(!confirm('Do you want to delete " + item + "?')){ return false; };";
+            }
+        }
+    }
+}
+protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
+{
+    int index = Convert.ToInt32(e.RowIndex);
+    DataTable dt = ViewState["dt"] as DataTable;
+    dt.Rows[index].Delete();
+    ViewState["dt"] = dt;
+    BindGrid();
+}
     private void BindGridview1()
     {
         SqlConnection con = new SqlConnection(CS);
-        SqlCommand cmd = new SqlCommand("select pid,pname,pprice,PSelPrice from tblProducts",con);
+        SqlCommand cmd = new SqlCommand(" select distinct t1.PID,t1.PName,t1.PPrice,t1.PSelPrice,t2.Name as Brand,t3.CatName,t4.SubCatName, t5.GenderName as gender,t6.SizeName,t8.Quantity from tblProducts as t1  inner join tblBrands as t2 on t2.BrandID=t1.PBrandID  inner join tblCategory as t3 on t3.CatID=t1.PCategoryID  inner join tblSubCategory as t4 on t4.SubCatID=t1.PSubCatID   inner join tblGender as t5 on t5.GenderID =t1.PGender   inner join tblSizes as t6 on t6.SubCategoryID=t1.PSubCatID  inner join tblProductSizeQuantity as t8 on t8.PID=t1.PID order by t1.PName",con);
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         da.Fill(dt);
+        ViewState["dt"] = dt;
         if (dt.Rows.Count > 0)
         {
             GridView1.DataSource = dt;
