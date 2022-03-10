@@ -186,7 +186,7 @@
            <div class="col-md-12">
               <div class="form-group">
                 <div class="table table-responsive">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table" AutoGenerateColumns="false">
+                    <asp:GridView ID="GridView1" OnRowDeleting="RowDeleting" runat="server" CssClass="table" AutoGenerateColumns="false">
                     <Columns>  
                         <asp:BoundField DataField="pid" HeaderText="SubCategory" />
                         <asp:BoundField DataField="pname" HeaderText="gender" />  
@@ -200,7 +200,7 @@
                 </asp:TemplateField> 
 
                         <asp:CommandField ShowEditButton="true" />  
-                        <asp:CommandField OnRowDeleting="RowDeleting" ShowDeleteButton="true" />
+                        <asp:CommandField ShowDeleteButton="true" />
                         
                          </Columns> 
                     </asp:GridView>
