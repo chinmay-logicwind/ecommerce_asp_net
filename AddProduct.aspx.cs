@@ -91,6 +91,7 @@ public partial class AddProduct : System.Web.UI.Page
             }
         }
     }
+
     protected void deleteProduct(object sender, EventArgs e)
 {
         using (SqlConnection con = new SqlConnection(CS))
@@ -303,7 +304,6 @@ public partial class AddProduct : System.Web.UI.Page
         {
             if (con.State == ConnectionState.Closed) { con.Open(); }
             string qr = "Select * from tblSizes where BrandID=@BrandID AND CategoryID=@CategoryID AND SubCategoryID=@SubCategoryID AND GenderID=@GenderID ";
-            
            // qr = "Select * from tblSizes where BrandID='" + ddlBrand.SelectedValue + "' and CategoryID='" + ddlCategory.SelectedValue + "' and SubCategoryID='" + ddlSubCategory.SelectedValue + "' and GenderID='" + ddlGender.SelectedValue + "'";
             SqlCommand cmd = new SqlCommand(qr, con);
             cmd.Parameters.AddWithValue("@BrandID",ddlBrand.SelectedValue);
@@ -336,15 +336,11 @@ public partial class AddProduct : System.Web.UI.Page
             ddlGender.Enabled = false ;
         }
     }
-    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
-{
-}
 
     private void BindGridview1()
     {
         SqlConnection con = new SqlConnection(CS);
-        SqlCommand cmd = new SqlCommand(" select distinct t1.PID,t1.PName,t1.PPrice,t1.PSelPrice,t2.Name as Brand,t3.CatName,t4.SubCatName, t5.GenderName as gender,t6.SizeName,t8.Quantity from tblProducts as t1  inner join tblBrands as t2 on t2.BrandID=t1.PBrandID  inner join tblCategory as t3 on t3.CatID=t1.PCategoryID  inner join tblSubCategory as t4 on t4.SubCatID=t1.PSubCatID   inner join tblGender as t5 on t5.GenderID =t1.PGender   inner join tblSizes as t6 on t6.SubCategoryID=t1.PSubCatID  inner join tblProductSizeQuantity as t8 on t8.PID=t1.PID",con);
-        //SqlCommand cmd = new SqlCommand("select * from tblProducts p inner join tblGender g on p.PGender = g.GenderID inner join tblCategory c on p.PCategoryID = c.CatID inner join tblSubCategory sc on p.PSubCatID = sc.SubCatID inner join tblBrands b on b.BrandID=p.PBrandID", con);
+        SqlCommand cmd = new SqlCommand(" select distinct t1.PID,t1.PName,t1.PPrice,t1.PSelPrice,t2.Name as Brand,t3.CatName,t4.SubCatName, t5.GenderName as gender,t6.SizeName,t8.Quantity from tblProducts as t1  inner join tblBrands as t2 on t2.BrandID=t1.PBrandID  inner join tblCategory as t3 on t3.CatID=t1.PCategoryID  inner join tblSubCategory as t4 on t4.SubCatID=t1.PSubCatID   inner join tblGender as t5 on t5.GenderID =t1.PGender   inner join tblSizes as t6 on t6.SubCategoryID=t1.PSubCatID  inner join tblProductSizeQuantity as t8 on t8.PID=t1.PID order by t1.PName",con);
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         da.Fill(dt);

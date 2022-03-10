@@ -186,7 +186,7 @@
            <div class="col-md-12">
               <div class="form-group">
                 <div class="table table-responsive">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table" onrowdatabound="GridView1_RowDataBound" AutoGenerateColumns="false">
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table" AutoGenerateColumns="false">
                     <Columns>  
                         <asp:BoundField DataField="PID" HeaderText="S.No." />  
                         <asp:BoundField DataField="PName" HeaderText="PName" />  
@@ -200,8 +200,7 @@
                         <asp:BoundField DataField="SizeName" HeaderText="SizeName" />  
                         <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                         
-                        <asp:TemplateField HeaderText="Photo"> 
-
+                        <asp:TemplateField HeaderText="Photo">  
                     <ItemTemplate>  
                         <%-- <img src="Images/ProductImages/<%# Eval("PID") %>/<%# Eval("ImageName") %><%# Eval("Extention") %>" alt="<%# Eval("ImageName") %>" style=" height:150px; width:150px;"/> --%>
                     </ItemTemplate>  
@@ -213,6 +212,7 @@
                          </Columns> 
                     </asp:GridView>
                 </div>
+              
               
               </div>
            
