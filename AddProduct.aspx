@@ -14,7 +14,7 @@
                <asp:Label ID="Label1" runat="server" CssClass ="col-md-2 control-label" Text="Proudct Name"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtProductName" CssClass ="form-control" runat="server"></asp:TextBox>
-                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtProductNameRequiredFieldValidator1" runat="server" ErrorMessage="ProductName cannot be blank" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>  
+                      <asp:RequiredFieldValidator SetFocusOnError="true" ID="txtProaductNameRequiredFieldValidator1" runat="server" ErrorMessage="ProductName cannot be blank" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>  
            <br />  
 
 
